@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    h4 {
+      position: absolute;
+      color: black;
+
+      margin: 0 0 0 49%;
+      z-index: 1000;
+    }
+
+    h5 {
+      position: absolute;
+      color: black;
+
+      margin: 11.5% 0 0 59%;
+      z-index: 1000;
+    }
+
+    .back {
+
+      width: 100%;
+      height: 100%;
+      background: white;
+    }
+
+    .oee {
+     
+      color: gray;
+
+    }
+
+    .do {
+      position: absolute;
+      top: 20%;
+      right: 48%;
+    }
+  </style>
+  <h5>100</h5>
+  <script type="text/javascript">
+    window.onload = function () {
+      CanvasJS.addColorSet("Shades",
+        [//colorSet Array
+          "#ffffff",
+          "#2F4F4F"
+        ]);
+      var chart = new CanvasJS.Chart("chartContainer",
+        {
+          colorSet: "Shades",
+          title: {
+            text: "Doughnut",
+            fontFamily: "Impact",
+            fontWeight: "normal"
+          },
+
+          //   legend:{
+          //     verticalAlign: "bottom",
+          //     horizontalAlign: "center"
+          //   },
+          data: [
+            {
+
+              type: "doughnut",
+              showInLegend: false,
+              dataPoints: [
+                { y: 25.0, },
+                { y: 75.0, },
+
+              ]
+            }
+          ]
+        });
+
+
+      chart.render();
+    }
+
+  </script>
+
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
+<body>
+  <div class="back">
+
+    <div id="chartContainer" style="height: 300px; width: 100%;">
+    </div>
+
+    <h4>0</h4>
+  </div>
+  <div class="do">
+    <h3>
+      90%
+    </h3>
+    <div class="oee">
+      OEE
+    </div>
+  </div>
+
+</body>
+
+</html>

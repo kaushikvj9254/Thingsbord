@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<script>
+		window.onload = function () {
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				theme: "light2",
+
+				title: {
+					text: "Downtime Category [Top 5]"
+				},
+				axisY: {
+					title: "Minutes"
+				},
+				data: [{
+					type: "column",
+					showInLegend: true,
+					legendMarkerColor: "grey",
+					color: "blue",
+
+					dataPoints: [
+						{ y: 150, label: "5" },
+						{ y: 100, label: "10" },
+						{ y: 50, label: "15" },
+						{ y: 0, label: "20" },
+					]
+				}]
+			});
+
+			chart.render();
+
+		}
+	</script>
+</head>
+
+<body>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>

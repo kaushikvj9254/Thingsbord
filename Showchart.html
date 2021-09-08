@@ -3,17 +3,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
         $(document).ready(function () {
             $(".box1").click(function () {
                 $("#chartContainer1").toggle(1000);
-$("#chartContainer2").hide();
-$("#chartContainer3").hide();
-$("#chartContainer4").hide();
             });
+            $(".box2").click(function () {
+$("#chartContainer2").hide(1000);
+});
+$(".box3").click(function () {
+$("#chartContainer3").hide(1000);
+});
+$(".box4").click(function () {
+$("#chartContainer4").hide(1000);
+});        
         });
     </script>
 </head>     
@@ -27,7 +32,7 @@ $("#chartContainer4").hide();
             display: flex;
             flex-direction: column;
         }
-        .box {
+        .box1,.box2,.box3,.box4 {
             position: relative;
             width: 100%;
             height: 20%;
@@ -49,6 +54,10 @@ $("#chartContainer4").hide();
          bottom: 0;
          padding: 15px;
         }
+        .div{
+            right:0;
+            width:75%;
+        }
     </style>
     <div style="display: flex;">
         <div class="boxside">
@@ -57,27 +66,28 @@ $("#chartContainer4").hide();
                 <div style="padding: 0.3rem;">Dose Weight L1 D1 </div>
                <i class="fas fa-chart-line icon"></i>
             </div>
-            <div class="box">
+            <div class="box2">
                 <div class="green"></div>
                 <div style="padding: 0.3rem;">Dose Weight L2 D1 </div>
                <i class="fas fa-chart-line icon"></i>
             </div>
-            <div class="box">
+            <div class="box3">
                 <div class="green"></div>
                 <div style="padding: 0.3rem;">Dose Weight L3 D1 </div>
                <i class="fas fa-chart-line icon"></i>
             </div>
-            <div class="box">
+            <div class="box4">
                 <div class="green"></div>
                 <div style="padding: 0.3rem;">Dose Weight L4 D1 </div>
                <i class="fas fa-chart-line icon"></i>
             </div>
         </div>  
-    
-    	<div id="chartContainer1" style="height: 388px; width: 75%;"></div>
-  	<div id="chartContainer2" style="height: 388px; width: 75%;"></div>
-	<div id="chartContainer3" style="height: 388px; width: 75%;"></div>
-	<div id="chartContainer4" style="height: 388px; width: 75%;"></div>
+    <div class="div">
+    <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+  	<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+	<div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+	<div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+</div>
     <script>
         window.onload = function () {
 

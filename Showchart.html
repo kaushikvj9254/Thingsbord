@@ -11,13 +11,13 @@
                 $("#chartContainer1").toggle(1000);
             });
             $(".box2").click(function () {
-$("#chartContainer2").hide(1000);
+$("#chartContainer2").toggle(1000);
 });
 $(".box3").click(function () {
-$("#chartContainer3").hide(1000);
+$("#chartContainer3").toggle(1000);
 });
 $(".box4").click(function () {
-$("#chartContainer4").hide(1000);
+$("#chartContainer4").toggle(1000);
 });        
         });
     </script>
@@ -220,14 +220,6 @@ $("#chartContainer4").hide(1000);
             });
             chart.render();
 
-            function toogleDataSeries(e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                    e.dataSeries.visible = false;
-                } else {
-                    e.dataSeries.visible = true;
-                }
-                chart.render();
-            }
 		var chart = new CanvasJS.Chart("chartContainer2", {
                 animationEnabled: true,
                 theme: "light2",
@@ -614,6 +606,15 @@ $("#chartContainer4").hide(1000);
             chart.render();
 
         }
+        
+        function toogleDataSeries(e) {
+                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                    e.dataSeries.visible = false;
+                } else {
+                    e.dataSeries.visible = true;
+                }
+                chart.render();
+            }
     </script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
    

@@ -8,8 +8,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
         $(document).ready(function () {
-            $(".box").click(function () {
-                $("#chartContainer").toggle(1000);
+            $(".box1").click(function () {
+                $("#chartContainer1").toggle(1000);
+$("#chartContainer2").hide();
+$("#chartContainer3").hide();
+$("#chartContainer4").hide();
             });
         });
     </script>
@@ -49,7 +52,7 @@
     </style>
     <div style="display: flex;">
         <div class="boxside">
-            <div class="box">
+            <div class="box1">
                 <div class="green"></div>
                 <div style="padding: 0.3rem;">Dose Weight L1 D1 </div>
                <i class="fas fa-chart-line icon"></i>
@@ -71,12 +74,14 @@
             </div>
         </div>  
     
-    <div id="chartContainer" style="height: 388px; width: 75%;"></div>
-  
+    	<div id="chartContainer1" style="height: 388px; width: 75%;"></div>
+  	<div id="chartContainer2" style="height: 388px; width: 75%;"></div>
+	<div id="chartContainer3" style="height: 388px; width: 75%;"></div>
+	<div id="chartContainer4" style="height: 388px; width: 75%;"></div>
     <script>
         window.onload = function () {
 
-            var chart = new CanvasJS.Chart("chartContainer", {
+            var chart = new CanvasJS.Chart("chartContainer1", {
                 animationEnabled: true,
                 theme: "light2",
                 title: {
@@ -213,6 +218,391 @@
                 }
                 chart.render();
             }
+		var chart = new CanvasJS.Chart("chartContainer2", {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Site Traffic2"
+                },
+                axisX: {
+                    valueFormatString: "DD - 08",
+                    crosshair: {
+                        enabled: true,
+                        snapToDataPoint: true
+                    }
+                },
+                axisY: {
+                    title: "Number of Visits",
+                    includeZero: true,
+                    crosshair: {
+                        enabled: true
+                    }
+                },
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    verticalAlign: "bottom",
+                    horizontalAlign: "left",
+                    dockInsidePlotArea: true,
+                    itemclick: toogleDataSeries
+                },
+                data: [{
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "#F88888",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 658 },
+                        { x: new Date(2021, 8, 4), y: 888 },
+                        { x: new Date(2021, 8, 5), y: 818 },
+                        { x: new Date(2021, 8, 6), y: 658 },
+                        { x: new Date(2021, 8, 8), y: 834 },
+                        { x: new Date(2021, 8, 8), y: 963 },
+                        { x: new Date(2021, 8, 9), y: 848 },
+                        { x: new Date(2021, 8, 10), y: 853 },
+                        { x: new Date(2021, 8, 11), y: 869 },
+                        { x: new Date(2021, 8, 12), y: 943 },
+                        { x: new Date(2021, 8, 13), y: 988 },
+                        { x: new Date(2021, 8, 14), y: 869 },
+                        { x: new Date(2021, 8, 15), y: 898 },
+                        { x: new Date(2021, 8, 16), y: 938 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "lightblue",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 518 },
+                        { x: new Date(2021, 8, 4), y: 568 },
+                        { x: new Date(2021, 8, 5), y: 548 },
+                        { x: new Date(2021, 8, 6), y: 558 },
+                        { x: new Date(2021, 8, 8), y: 544 },
+                        { x: new Date(2021, 8, 8), y: 693 },
+                        { x: new Date(2021, 8, 9), y: 658 },
+                        { x: new Date(2021, 8, 10), y: 663 },
+                        { x: new Date(2021, 8, 11), y: 639 },
+                        { x: new Date(2021, 8, 12), y: 683 },
+                        { x: new Date(2021, 8, 13), y: 668 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 643 },
+                        { x: new Date(2021, 8, 16), y: 588 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "green",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 588 },
+                        { x: new Date(2021, 8, 4), y: 543 },
+                        { x: new Date(2021, 8, 5), y: 541 },
+                        { x: new Date(2021, 8, 6), y: 583 },
+                        { x: new Date(2021, 8, 8), y: 542 },
+                        { x: new Date(2021, 8, 8), y: 621 },
+                        { x: new Date(2021, 8, 9), y: 685 },
+                        { x: new Date(2021, 8, 10), y: 685 },
+                        { x: new Date(2021, 8, 11), y: 684 },
+                        { x: new Date(2021, 8, 12), y: 683 },
+                        { x: new Date(2021, 8, 13), y: 665 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 682 },
+                        { x: new Date(2021, 8, 16), y: 582 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "#000",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 488 },
+                        { x: new Date(2021, 8, 4), y: 443 },
+                        { x: new Date(2021, 8, 5), y: 441 },
+                        { x: new Date(2021, 8, 6), y: 483 },
+                        { x: new Date(2021, 8, 8), y: 442 },
+                        { x: new Date(2021, 8, 8), y: 521 },
+                        { x: new Date(2021, 8, 9), y: 585 },
+                        { x: new Date(2021, 8, 10), y: 585 },
+                        { x: new Date(2021, 8, 11), y: 584 },
+                        { x: new Date(2021, 8, 12), y: 583 },
+                        { x: new Date(2021, 8, 13), y: 565 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 582 },
+                        { x: new Date(2021, 8, 16), y: 482 }
+                    ]
+                }]
+            });
+            chart.render();
+		var chart = new CanvasJS.Chart("chartContainer3", {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Site Traffic3"
+                },
+                axisX: {
+                    valueFormatString: "DD - 08",
+                    crosshair: {
+                        enabled: true,
+                        snapToDataPoint: true
+                    }
+                },
+                axisY: {
+                    title: "Number of Visits",
+                    includeZero: true,
+                    crosshair: {
+                        enabled: true
+                    }
+                },
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    verticalAlign: "bottom",
+                    horizontalAlign: "left",
+                    dockInsidePlotArea: true,
+                    itemclick: toogleDataSeries
+                },
+                data: [{
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "#F88888",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 658 },
+                        { x: new Date(2021, 8, 4), y: 888 },
+                        { x: new Date(2021, 8, 5), y: 818 },
+                        { x: new Date(2021, 8, 6), y: 658 },
+                        { x: new Date(2021, 8, 8), y: 834 },
+                        { x: new Date(2021, 8, 8), y: 963 },
+                        { x: new Date(2021, 8, 9), y: 848 },
+                        { x: new Date(2021, 8, 10), y: 853 },
+                        { x: new Date(2021, 8, 11), y: 869 },
+                        { x: new Date(2021, 8, 12), y: 943 },
+                        { x: new Date(2021, 8, 13), y: 988 },
+                        { x: new Date(2021, 8, 14), y: 869 },
+                        { x: new Date(2021, 8, 15), y: 898 },
+                        { x: new Date(2021, 8, 16), y: 938 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "lightblue",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 518 },
+                        { x: new Date(2021, 8, 4), y: 568 },
+                        { x: new Date(2021, 8, 5), y: 548 },
+                        { x: new Date(2021, 8, 6), y: 558 },
+                        { x: new Date(2021, 8, 8), y: 544 },
+                        { x: new Date(2021, 8, 8), y: 693 },
+                        { x: new Date(2021, 8, 9), y: 658 },
+                        { x: new Date(2021, 8, 10), y: 663 },
+                        { x: new Date(2021, 8, 11), y: 639 },
+                        { x: new Date(2021, 8, 12), y: 683 },
+                        { x: new Date(2021, 8, 13), y: 668 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 643 },
+                        { x: new Date(2021, 8, 16), y: 588 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "green",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 588 },
+                        { x: new Date(2021, 8, 4), y: 543 },
+                        { x: new Date(2021, 8, 5), y: 541 },
+                        { x: new Date(2021, 8, 6), y: 583 },
+                        { x: new Date(2021, 8, 8), y: 542 },
+                        { x: new Date(2021, 8, 8), y: 621 },
+                        { x: new Date(2021, 8, 9), y: 685 },
+                        { x: new Date(2021, 8, 10), y: 685 },
+                        { x: new Date(2021, 8, 11), y: 684 },
+                        { x: new Date(2021, 8, 12), y: 683 },
+                        { x: new Date(2021, 8, 13), y: 665 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 682 },
+                        { x: new Date(2021, 8, 16), y: 582 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "#000",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 488 },
+                        { x: new Date(2021, 8, 4), y: 443 },
+                        { x: new Date(2021, 8, 5), y: 441 },
+                        { x: new Date(2021, 8, 6), y: 483 },
+                        { x: new Date(2021, 8, 8), y: 442 },
+                        { x: new Date(2021, 8, 8), y: 521 },
+                        { x: new Date(2021, 8, 9), y: 585 },
+                        { x: new Date(2021, 8, 10), y: 585 },
+                        { x: new Date(2021, 8, 11), y: 584 },
+                        { x: new Date(2021, 8, 12), y: 583 },
+                        { x: new Date(2021, 8, 13), y: 565 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 582 },
+                        { x: new Date(2021, 8, 16), y: 482 }
+                    ]
+                }]
+            });
+            chart.render();
+		var chart = new CanvasJS.Chart("chartContainer4", {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Site Traffic4"
+                },
+                axisX: {
+                    valueFormatString: "DD - 08",
+                    crosshair: {
+                        enabled: true,
+                        snapToDataPoint: true
+                    }
+                },
+                axisY: {
+                    title: "Number of Visits",
+                    includeZero: true,
+                    crosshair: {
+                        enabled: true
+                    }
+                },
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    verticalAlign: "bottom",
+                    horizontalAlign: "left",
+                    dockInsidePlotArea: true,
+                    itemclick: toogleDataSeries
+                },
+                data: [{
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "#F88888",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 658 },
+                        { x: new Date(2021, 8, 4), y: 888 },
+                        { x: new Date(2021, 8, 5), y: 818 },
+                        { x: new Date(2021, 8, 6), y: 658 },
+                        { x: new Date(2021, 8, 8), y: 834 },
+                        { x: new Date(2021, 8, 8), y: 963 },
+                        { x: new Date(2021, 8, 9), y: 848 },
+                        { x: new Date(2021, 8, 10), y: 853 },
+                        { x: new Date(2021, 8, 11), y: 869 },
+                        { x: new Date(2021, 8, 12), y: 943 },
+                        { x: new Date(2021, 8, 13), y: 988 },
+                        { x: new Date(2021, 8, 14), y: 869 },
+                        { x: new Date(2021, 8, 15), y: 898 },
+                        { x: new Date(2021, 8, 16), y: 938 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "lightblue",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 518 },
+                        { x: new Date(2021, 8, 4), y: 568 },
+                        { x: new Date(2021, 8, 5), y: 548 },
+                        { x: new Date(2021, 8, 6), y: 558 },
+                        { x: new Date(2021, 8, 8), y: 544 },
+                        { x: new Date(2021, 8, 8), y: 693 },
+                        { x: new Date(2021, 8, 9), y: 658 },
+                        { x: new Date(2021, 8, 10), y: 663 },
+                        { x: new Date(2021, 8, 11), y: 639 },
+                        { x: new Date(2021, 8, 12), y: 683 },
+                        { x: new Date(2021, 8, 13), y: 668 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 643 },
+                        { x: new Date(2021, 8, 16), y: 588 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "green",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 588 },
+                        { x: new Date(2021, 8, 4), y: 543 },
+                        { x: new Date(2021, 8, 5), y: 541 },
+                        { x: new Date(2021, 8, 6), y: 583 },
+                        { x: new Date(2021, 8, 8), y: 542 },
+                        { x: new Date(2021, 8, 8), y: 621 },
+                        { x: new Date(2021, 8, 9), y: 685 },
+                        { x: new Date(2021, 8, 10), y: 685 },
+                        { x: new Date(2021, 8, 11), y: 684 },
+                        { x: new Date(2021, 8, 12), y: 683 },
+                        { x: new Date(2021, 8, 13), y: 665 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 682 },
+                        { x: new Date(2021, 8, 16), y: 582 }
+                    ]
+                },
+                {
+                    type: "line",
+                    showInLegend: true,
+                    name: "Total Visit",
+                    markerType: "square",
+                    xValueFormatString: "DD MMM, YYYY",
+                    color: "#000",
+                    dataPoints: [
+                        { x: new Date(2021, 8, 3), y: 488 },
+                        { x: new Date(2021, 8, 4), y: 443 },
+                        { x: new Date(2021, 8, 5), y: 441 },
+                        { x: new Date(2021, 8, 6), y: 483 },
+                        { x: new Date(2021, 8, 8), y: 442 },
+                        { x: new Date(2021, 8, 8), y: 521 },
+                        { x: new Date(2021, 8, 9), y: 585 },
+                        { x: new Date(2021, 8, 10), y: 585 },
+                        { x: new Date(2021, 8, 11), y: 584 },
+                        { x: new Date(2021, 8, 12), y: 583 },
+                        { x: new Date(2021, 8, 13), y: 565 },
+                        { x: new Date(2021, 8, 14), y: 562 },
+                        { x: new Date(2021, 8, 15), y: 582 },
+                        { x: new Date(2021, 8, 16), y: 482 }
+                    ]
+                }]
+            });
+            chart.render();
+
         }
     </script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

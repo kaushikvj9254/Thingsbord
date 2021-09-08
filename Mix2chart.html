@@ -37,6 +37,36 @@
       top: 20%;
       right: 48%;
     }
+      .boxside{
+            position: relative;
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+           margin-left: 74%;
+        }
+        .box {
+            position: relative;
+            width: 100%;
+            height: 20%;
+            display: flex;
+            cursor: pointer;
+            background: #e1e1e1;
+            margin: 10px 0;
+         
+        }
+        .green{
+            width: 6%;
+            height: 100%;
+            background: rgb(34, 255, 34);
+            padding: 2rem 0;
+        }
+        .orange{
+            width: 6%;
+            height: 100%;
+            background: orange;
+            padding: 2rem 0;
+        }
   </style>
   <h5>100</h5>
   <script type="text/javascript">
@@ -98,7 +128,23 @@
       OEE
     </div>
   </div>
-
+  <div class="boxside">
+    <div class="box">
+        <div class="green"></div>
+        <div style="padding: 0.3rem;">Availability </div>
+      
+    </div>
+    <div class="box">
+        <div class="orange"></div>
+        <div style="padding: 0.3rem;">Performance</div>
+      
+    </div>
+    <div class="box">
+        <div class="green"></div>
+        <div style="padding: 0.3rem;">Quality </div>
+     
+    </div>
+</div>
 </body>
 
 </html>
